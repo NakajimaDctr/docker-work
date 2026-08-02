@@ -1,0 +1,13 @@
+# ステージ1: ビルド用(重い、ツール一式入り)
+FROM golang:1.22 AS builder
+
+WORKDIR /src
+COPY . .
+RUN go build -o app .
+
+# ステージ2: 実行用(軽量ベースイメージ)
+FROM alpine:3.19
+
+COPY --from=builder /src/app /app
+
+CMD ["/app"]

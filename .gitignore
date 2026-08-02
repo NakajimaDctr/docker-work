@@ -1,0 +1,5 @@
+# 実習中に生成される一時ファイル
+**/.env
+**/local-data/
+__pycache__/
+*.pyc
