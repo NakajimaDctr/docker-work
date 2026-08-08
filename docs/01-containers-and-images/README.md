@@ -103,5 +103,7 @@ docker rm my-nginx my-nginx-2
 - **`docker ps`に何も表示されない**: `docker ps`はデフォルトで「実行中」のコンテナのみ表示します。停止したコンテナも見たい場合は `docker ps -a` を使います。
 - **ブラウザで表示されない**: コンテナが `Up` になっているか `docker ps` で確認し、URLの `localhost:8080` のポート番号が `-p` で指定したホスト側ポートと一致しているか確認してください。
 
+補足: [学習メモ・QA集](notes.md)
+
 ---
 前へ: [00. 環境セットアップ](../00-setup/README.md) | 次へ: [02. 基本コマンド操作](../02-basic-commands/README.md)
