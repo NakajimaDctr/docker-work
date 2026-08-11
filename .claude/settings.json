@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(note-qa)",
+      "Skill(note-qa:*)",
+      "Bash(rtk read *)",
+      "Bash(docker info *)",
+      "Bash(docker network *)",
+      "Bash(docker run *)",
+      "Bash(python3 -m json.tool)",
+      "Bash(wait)"
+    ]
+  }
+}
