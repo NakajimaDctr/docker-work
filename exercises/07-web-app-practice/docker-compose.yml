@@ -20,5 +20,8 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
+# named volume(名前付きボリューム)をDockerに登録する
+# dbのvolumesで指定する。
+# 本当の名前はdocker volume lsで確認できる。
 volumes:
   db-data:

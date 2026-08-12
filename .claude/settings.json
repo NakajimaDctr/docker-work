@@ -8,7 +8,9 @@
       "Bash(docker network *)",
       "Bash(docker run *)",
       "Bash(python3 -m json.tool)",
-      "Bash(wait)"
+      "Bash(wait)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)"
     ]
   }
 }
