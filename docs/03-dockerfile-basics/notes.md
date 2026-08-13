@@ -219,4 +219,46 @@ services:
 
 ---
 
+## Q. `docker build -f`の`-f`オプションとは?
+
+**A.**
+使用する**Dockerfileを明示的に指定する**オプション。デフォルトでは`docker build`はビルドコンテキスト直下にある`Dockerfile`という名前のファイルを自動的に探すが、`-f`(`--file`)を使うとそれ以外の名前・場所のファイルを指定できる。
+
+```bash
+docker build -f <Dockerfileのパス> <ビルドコンテキスト>
+```
+
+### よくある使いどころ
+
+**1. Dockerfileの名前や場所がデフォルトと違う場合**
+```bash
+docker build -f docker/Dockerfile.prod .
+```
+
+**2. 同じディレクトリに複数の環境別Dockerfileがある場合**
+```bash
+docker build -f Dockerfile.dev .
+docker build -f Dockerfile.prod .
+```
+
+**3. ビルドコンテキストとDockerfileの場所が離れている場合**
+```bash
+docker build -f ./docker/backend/Dockerfile .
+```
+(第2引数の`.`はビルドコンテキスト。Dockerfile自体の場所とは別に指定できる)
+
+### 補足
+
+`docker-compose.yml`では`dockerfile:`キーが`-f`に相当する。
+
+```yaml
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev   # -f に相当
+```
+
+---
+
 前へ: [README](README.md)
